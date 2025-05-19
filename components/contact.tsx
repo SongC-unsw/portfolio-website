@@ -9,8 +9,11 @@ import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Mail, MapPin, Phone } from "lucide-react"
 import AnimateInView from "./animate-in-view"
+import { useLanguage } from "@/contexts/language-context"
 
 export default function Contact() {
+  const { t } = useLanguage()
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -48,20 +51,14 @@ export default function Contact() {
     <section id="contact" className="w-full py-16 md:py-24 bg-muted/50">
       <div className="container max-w-7xl mx-auto">
         <AnimateInView>
-          <SectionHeading
-            title="Contact Me"
-            description="Have a question or want to work together? Feel free to reach out!"
-          />
+          <SectionHeading title={t("contact.title")} description={t("contact.description")} />
         </AnimateInView>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 mt-12">
           <AnimateInView delay={100}>
             <div className="space-y-6">
-              <h3 className="text-2xl font-bold">Get In Touch</h3>
-              <p className="text-muted-foreground">
-                I'm currently looking for new opportunities. Whether you have a question or just want to say hi, I'll
-                try my best to get back to you!
-              </p>
+              <h3 className="text-2xl font-bold">{t("contact.getInTouch")}</h3>
+              <p className="text-muted-foreground">{t("contact.opportunities")}</p>
 
               <div className="space-y-4 mt-8">
                 <div className="flex items-center group">
@@ -69,7 +66,7 @@ export default function Contact() {
                     <Mail className="h-5 w-5 text-primary" />
                   </div>
                   <div>
-                    <h4 className="font-medium">Email</h4>
+                    <h4 className="font-medium">{t("contact.email")}</h4>
                     <p className="text-muted-foreground">your.email@example.com</p>
                   </div>
                 </div>
@@ -79,7 +76,7 @@ export default function Contact() {
                     <Phone className="h-5 w-5 text-primary" />
                   </div>
                   <div>
-                    <h4 className="font-medium">Phone</h4>
+                    <h4 className="font-medium">{t("contact.phone")}</h4>
                     <p className="text-muted-foreground">(123) 456-7890</p>
                   </div>
                 </div>
@@ -89,7 +86,7 @@ export default function Contact() {
                     <MapPin className="h-5 w-5 text-primary" />
                   </div>
                   <div>
-                    <h4 className="font-medium">Location</h4>
+                    <h4 className="font-medium">{t("contact.location")}</h4>
                     <p className="text-muted-foreground">City, Country</p>
                   </div>
                 </div>
@@ -101,15 +98,15 @@ export default function Contact() {
             <div>
               {isSubmitted ? (
                 <div className="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative animate-fade-in">
-                  <strong className="font-bold">Thank you!</strong>
-                  <span className="block sm:inline"> Your message has been sent successfully.</span>
+                  <strong className="font-bold">{t("contact.thankYou")}</strong>
+                  <span className="block sm:inline"> {t("contact.messageSent")}</span>
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-4">
                   <div className="transition-all duration-300 hover:translate-x-1">
                     <Input
                       name="name"
-                      placeholder="Your Name"
+                      placeholder={t("contact.yourName")}
                       value={formData.name}
                       onChange={handleChange}
                       required
@@ -120,7 +117,7 @@ export default function Contact() {
                     <Input
                       name="email"
                       type="email"
-                      placeholder="Your Email"
+                      placeholder={t("contact.yourEmail")}
                       value={formData.email}
                       onChange={handleChange}
                       required
@@ -130,7 +127,7 @@ export default function Contact() {
                   <div className="transition-all duration-300 hover:translate-x-1">
                     <Textarea
                       name="message"
-                      placeholder="Your Message"
+                      placeholder={t("contact.yourMessage")}
                       value={formData.message}
                       onChange={handleChange}
                       rows={5}
@@ -165,10 +162,10 @@ export default function Contact() {
                             d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
                           ></path>
                         </svg>
-                        Sending...
+                        {t("contact.sending")}
                       </span>
                     ) : (
-                      "Send Message"
+                      t("contact.sendMessage")
                     )}
                   </Button>
                 </form>

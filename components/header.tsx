@@ -4,10 +4,13 @@ import { useState, useEffect } from "react"
 import Link from "next/link"
 import { Menu, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import LanguagePicker from "./language-picker"
+import { useLanguage } from "@/contexts/language-context"
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
+  const { t } = useLanguage()
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen)
@@ -34,35 +37,44 @@ export default function Header() {
         scrolled ? "bg-background/95 shadow-sm" : "bg-background/50"
       }`}
     >
-      <div className="container max-w-7xl mx-auto flex h-16 items-center justify-between">
-        <Link href="/" className="font-bold text-xl transition-colors hover:text-primary">
-          Portfolio
-        </Link>
+      <div className="container max-w-7xl mx-auto flex h-16 items-center">
+        {/* Logo/Brand - Left side */}
+        <div className="flex-1">
+          <Link href="/" className="font-bold text-xl transition-colors hover:text-primary">
+            Portfolio
+          </Link>
+        </div>
 
-        {/* Mobile menu button */}
-        <Button variant="ghost" size="icon" className="md:hidden" onClick={toggleMenu}>
-          {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-        </Button>
-
-        {/* Desktop navigation */}
-        <nav className="hidden md:flex gap-6">
+        {/* Navigation - Center */}
+        <div className="hidden md:flex items-center justify-center gap-6">
           <Link href="#home" className="text-sm font-medium hover:text-primary transition-colors relative group">
-            Home
+            {t("nav.home")}
             <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
           </Link>
           <Link href="#projects" className="text-sm font-medium hover:text-primary transition-colors relative group">
-            Projects
+            {t("nav.projects")}
             <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
           </Link>
           <Link href="#about" className="text-sm font-medium hover:text-primary transition-colors relative group">
-            About
+            {t("nav.about")}
             <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
           </Link>
           <Link href="#contact" className="text-sm font-medium hover:text-primary transition-colors relative group">
-            Contact
+            {t("nav.contact")}
             <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
           </Link>
-        </nav>
+        </div>
+
+        {/* Right side - Language picker and mobile menu */}
+        <div className="flex items-center justify-end gap-2 flex-1">
+          {/* Language picker - rightmost position */}
+          <LanguagePicker />
+
+          {/* Mobile menu button */}
+          <Button variant="ghost" size="icon" className="md:hidden" onClick={toggleMenu}>
+            {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+          </Button>
+        </div>
 
         {/* Mobile navigation */}
         <div
@@ -76,28 +88,28 @@ export default function Header() {
               className="py-2 text-sm font-medium hover:text-primary transition-colors"
               onClick={() => setIsMenuOpen(false)}
             >
-              Home
+              {t("nav.home")}
             </Link>
             <Link
               href="#projects"
               className="py-2 text-sm font-medium hover:text-primary transition-colors"
               onClick={() => setIsMenuOpen(false)}
             >
-              Projects
+              {t("nav.projects")}
             </Link>
             <Link
               href="#about"
               className="py-2 text-sm font-medium hover:text-primary transition-colors"
               onClick={() => setIsMenuOpen(false)}
             >
-              About
+              {t("nav.about")}
             </Link>
             <Link
               href="#contact"
               className="py-2 text-sm font-medium hover:text-primary transition-colors"
               onClick={() => setIsMenuOpen(false)}
             >
-              Contact
+              {t("nav.contact")}
             </Link>
           </nav>
         </div>

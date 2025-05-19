@@ -1,6 +1,9 @@
+"use client"
+
 import ProjectCard from "./project-card"
 import { SectionHeading } from "./section-heading"
 import AnimateInView from "./animate-in-view"
+import { useLanguage } from "@/contexts/language-context"
 
 const projectsData = [
   {
@@ -32,14 +35,13 @@ const projectsData = [
 ]
 
 export default function Projects() {
+  const { t } = useLanguage()
+
   return (
     <section id="projects" className="w-full py-16 md:py-24 bg-muted/50">
       <div className="container max-w-7xl mx-auto">
         <AnimateInView>
-          <SectionHeading
-            title="Projects"
-            description="Here are some of my recent projects. Each one was built to solve a specific problem or learn new technologies."
-          />
+          <SectionHeading title={t("projects.title")} description={t("projects.description")} />
         </AnimateInView>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">

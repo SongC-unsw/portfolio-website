@@ -1,13 +1,20 @@
+"use client"
+
 import Link from "next/link"
 import { Github, Linkedin, Twitter } from "lucide-react"
 import AnimateInView from "./animate-in-view"
+import { useLanguage } from "@/contexts/language-context"
 
 export default function Footer() {
+  const { t } = useLanguage()
+
   return (
     <footer className="w-full border-t py-8">
       <div className="container max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center">
         <AnimateInView className="mb-4 md:mb-0">
-          <p className="text-sm text-muted-foreground">© {new Date().getFullYear()} Your Name. All rights reserved.</p>
+          <p className="text-sm text-muted-foreground">
+            © {new Date().getFullYear()} Your Name. {t("footer.rights")}
+          </p>
         </AnimateInView>
 
         <AnimateInView className="flex space-x-4" delay={100}>
