@@ -16,6 +16,24 @@ const projectsData = [
     githubUrl: "https://github.com/yourusername/project",
   },
   {
+    title: "Conway's Life Game",
+    description:
+      "A simple web implementation of Conway's Game of Life using Javascript and HTML CSS",
+    image: "/life-game.gif?height=400&width=600",
+    tags: ["Javascript", "HTML", "CSS"],
+    liveUrl: "https://conway-s-life-game-three.vercel.app/",
+    githubUrl: "https://github.com/SongC-unsw/Conway-s-Life-Game",
+  },
+  {
+    title: "Book of Answers",
+    description:
+      "This is a simple React application that simulates the functionality of a \"Book of Answer\". Users can click on the book cover to get a random answer.",
+    image: "/Book.png?height=400&width=600",
+    tags: ["React", "Tailwind CSS"],
+    liveUrl: "https://book-of-answers-sigma.vercel.app/",
+    githubUrl: "https://github.com/SongC-unsw/Book-of-Answers",
+  },
+  {
     title: "Weather Dashboard",
     description: "Real-time weather application that displays current conditions and forecasts based on user location.",
     image: "/placeholder.svg?height=400&width=600",
