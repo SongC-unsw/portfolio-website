@@ -34,6 +34,15 @@ const projectsData = [
     githubUrl: "https://github.com/SongC-unsw/Book-of-Answers",
   },
   {
+    title: "Investment & FIRE Calculator",
+    description:
+      "A comprehensive financial calculator for compound interest projections and FIRE (Financial Independence, Retire Early) planning.",
+    image: "/savings.png?height=400&width=600",
+    tags: ["React", "Material UI", "Echarts"],
+    liveUrl: "https://simple-compound-investment-and-fire-calculator.vercel.app/",
+    githubUrl: "https://github.com/SongC-unsw/Simple-Compound-Investment-and-FIRE-Calculator",
+  },
+  {
     title: "Weather Dashboard",
     description: "Real-time weather application that displays current conditions and forecasts based on user location.",
     image: "/placeholder.svg?height=400&width=600",
