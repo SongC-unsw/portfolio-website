@@ -7,13 +7,13 @@ import { useLanguage } from "@/contexts/language-context";
 
 const projectsData = [
   {
-    title: "E-commerce Platform",
+    title: "Full-stack inventory management app",
     description:
-      "A full-stack e-commerce application with product listings, cart functionality, and secure checkout process.",
-    image: "/placeholder.svg?height=400&width=600",
-    tags: ["React", "Node.js", "MongoDB", "Stripe"],
-    liveUrl: "https://example.com",
-    githubUrl: "https://github.com/yourusername/project",
+      "A full-stack inventory management system built with Next.js, TypeScript and TailwindCSS frontend, Node.js/Express backend, and PostgreSQL database with Prisma ORM. Implemented features include real-time products updates and search and stats dashboard. Deployed on AWS infrastructure using EC2, RDS, S3, and Amplify.",
+    image: "/dashboard.png?height=400&width=600",
+    tags: ["Next.js", "React", "Node.js", "Redux", "RTK Query", "PostgreSQL", "Prisma", "AWS"],
+    liveUrl: "https://main.d3qfgx2t3gznd3.amplifyapp.com/",
+    githubUrl: "https://github.com/SongC-unsw/Fullstack-inventory-management",
   },
   {
     title: "Conway's Life Game",
