@@ -27,7 +27,7 @@ const projectsData = [
   {
     title: "Lurkforwork - A LinkedIn Clone",
     description:
-      "A LinkedIn-like Social Platform A professional networking web application inspired by LinkedIn, enabling users to create profiles, connect with professionals, explore job opportunities, post comments or new jobs. Built using Vanilla JS.",
+      "A LinkedIn-like Social Platform. Built with Vanilla JS, HTML, CSS, and Bootstrap. Features include user login and registration, profile creation, edit and delete, job listings with images and dates, comment and like system and infinite scroll. Deployed on Vercel and Railway.",
     image: "/lurkforwork.gif?height=400&width=600",
     tags: ["Javascript", "HTML", "CSS", "Bootstrap"],
     liveUrl: "https://linkedin-like-social-platform.vercel.app/",
