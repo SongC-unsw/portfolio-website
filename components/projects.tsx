@@ -7,6 +7,15 @@ import { useLanguage } from "@/contexts/language-context";
 
 const projectsData = [
   {
+    title: "Lurkforwork - A LinkedIn Clone",
+    description:
+      "A LinkedIn-like Social Platform. Built with Vanilla JS, HTML, CSS, and Bootstrap. Key features include user authentication (login/registration), job postings with images and timestamps, post management (edit/delete), interactive engagement (likes and comments), a follow/unfollow system, and infinite scroll for seamless browsing. Deployed on Vercel for the frontend and Railway for the backend.",
+    image: "/lurkforwork.gif?height=400&width=600",
+    tags: ["Javascript", "HTML", "CSS", "Bootstrap"],
+    liveUrl: "https://linkedin-like-social-platform.vercel.app/",
+    githubUrl: "https://github.com/SongC-unsw/LinkedIn-like-social-platform",
+  },
+  {
     title: "Full-stack inventory management app",
     description:
       "A full-stack inventory management system built with Next.js, TypeScript and TailwindCSS frontend, Node.js/Express backend, and PostgreSQL database with Prisma ORM. Implemented features include real-time products updates and search and stats dashboard. Deployed on AWS infrastructure using EC2, RDS, S3, and Amplify.",
@@ -25,13 +34,13 @@ const projectsData = [
     githubUrl: "https://github.com/SongC-unsw/Fullstack-inventory-management",
   },
   {
-    title: "Lurkforwork - A LinkedIn Clone",
+    title: "Deepseek clone - An AI Chatbot",
     description:
-      "A LinkedIn-like Social Platform. Built with Vanilla JS, HTML, CSS, and Bootstrap. Key features include user authentication (login/registration), job postings with images and timestamps, post management (edit/delete), interactive engagement (likes and comments), a follow/unfollow system, and infinite scroll for seamless browsing. Deployed on Vercel for the frontend and Railway for the backend.",
-    image: "/lurkforwork.gif?height=400&width=600",
-    tags: ["Javascript", "HTML", "CSS", "Bootstrap"],
-    liveUrl: "https://linkedin-like-social-platform.vercel.app/",
-    githubUrl: "https://github.com/SongC-unsw/LinkedIn-like-social-platform",
+      "A deepseek chatbot clone built with Next.js, TypeScript and TailwindCSS frontend, Backend is powered by Supabase",
+    image: "/deepseek.png?height=400&width=600",
+    tags: ["Next.js", "React", "Node.js", "Supabase", "Drizzle ORM", "Clerk"],
+    liveUrl: "https://ai-chat-app-silk-kappa.vercel.app/",
+    githubUrl: "https://github.com/SongC-unsw/AI-chat-app",
   },
   {
     title: "Conway's Life Game",
@@ -70,15 +79,6 @@ const projectsData = [
     tags: ["React", "Next.js", "Shadcn", "OpenWeather API", "Tailwind CSS"],
     liveUrl: "https://weather-app-ten-gray-33.vercel.app",
     githubUrl: "https://github.com/SongC-unsw/Weather-app",
-  },
-  {
-    title: "Task Management App",
-    description:
-      "A productivity application for managing tasks with features like drag-and-drop, categories, and reminders.",
-    image: "/placeholder.svg?height=400&width=600",
-    tags: ["React", "TypeScript", "Firebase"],
-    liveUrl: "https://example.com",
-    githubUrl: "https://github.com/yourusername/project",
   },
 ];
 
